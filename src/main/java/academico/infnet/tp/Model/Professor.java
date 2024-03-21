@@ -3,6 +3,7 @@ package academico.infnet.tp.Model;
 import java.util.List;
 
 import academico.infnet.tp.Record.EscolaRecord.DadosCadastroEscolaRecord;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,6 +19,7 @@ public class Professor {
   private float salario;
   private String titulo;
   @OneToOne(mappedBy = "professor")
+  @JsonBackReference
   private Escola escola;
 
   public Professor() {}
